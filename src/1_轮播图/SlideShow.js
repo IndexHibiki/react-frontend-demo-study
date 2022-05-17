@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import image1 from "./image1.png";
 import image2 from "./image2.png";
 import image3 from "./image3.png";
+import { ReactComponent as Arrow } from "./arrow.svg";
 import "./style.css";
 
 const SlideShow = () => {
@@ -21,7 +22,7 @@ const SlideShow = () => {
 
   React.useEffect(() => {
     resetTimeout();
-    // My loop logic is that add the first image to the last of image arrays
+    // My loop logic is that add the first image to the last of image arrays, preventing unexcepted jump from the last one to the first one
     // So need change delay to correctly display the animation
     // Just remember assert Transition Time less than delay
     var ddelay = index === images.length - 1 || index === 0 ? delay / 2 : delay;
@@ -48,6 +49,24 @@ const SlideShow = () => {
 
   return (
     <div className="slide_show">
+      <div
+        className="control to_former"
+        onClick={() => {
+          setIndex(
+            index === 0 || index === 1 ? images.length + index - 2 : index - 1
+          );
+        }}
+      >
+        <Arrow className="icon" />
+      </div>
+      <div
+        className="control to_latter"
+        onClick={() => {
+          setIndex(index === images.length - 1 ? 0 : index + 1);
+        }}
+      >
+        <Arrow className="icon" />
+      </div>
       {/* Images Area */}
       <div
         className="image_dynamic"

@@ -5,8 +5,10 @@
 }
 
 .slide_show {
+  border: 2px solid green;
   width: 40vw;
   overflow: hidden;
+  position: relative;
   .image_dynamic {
     transition: ease 1s;
   }
@@ -45,5 +47,41 @@
     .active {
       background-color: aqua;
     }
+  }
+
+  .control {
+    width: 4vw;
+    height: 40vw;
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 4vw;
+      height: 15vw;
+      background-color: rgba(185, 185, 185, 0);
+      stroke: black;
+      stroke-width: 0.5vw;
+      fill: rgb(214, 214, 214);
+      transition: all ease 0.3s;
+
+      &:hover {
+        transform: scale(1.5);
+        background-color: rgba(209, 209, 209, 0.2);
+      }
+    }
+  }
+
+  .to_former {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+
+  .to_latter {
+    left: 36vw;
   }
 }

@@ -6,8 +6,10 @@
 }
 
 .slide_show {
+  border: 2px solid green;
   width: 40vw;
   overflow: hidden;
+  position: relative;
 }
 
 .slide_show .image_dynamic {
@@ -54,5 +56,52 @@
 
 .slide_show .dot_display .active {
   background-color: aqua;
+}
+
+.slide_show .control {
+  width: 4vw;
+  height: 40vw;
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slide_show .control svg {
+  width: 4vw;
+  height: 15vw;
+  background-color: rgba(185, 185, 185, 0);
+  stroke: black;
+  stroke-width: 0.5vw;
+  fill: #d6d6d6;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.slide_show .control svg:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  background-color: rgba(209, 209, 209, 0.2);
+}
+
+.slide_show .to_former {
+  -webkit-transform: rotate3d(0, 1, 0, 180deg);
+          transform: rotate3d(0, 1, 0, 180deg);
+}
+
+.slide_show .to_latter {
+  left: 36vw;
 }
 /*# sourceMappingURL=style.css.map */
