@@ -31,6 +31,8 @@ const SlideShow = () => {
           "all " + animeTime + "ms ease";
       }, delay);
     } else {
+      document.getElementsByClassName("image_display")[0].style.transition =
+        "all " + animeTime + "ms ease";
       setIndex(index - 1);
     }
   };
@@ -50,6 +52,8 @@ const SlideShow = () => {
           "all " + animeTime + "ms ease";
       }, delay);
     } else {
+      document.getElementsByClassName("image_display")[0].style.transition =
+        "all " + animeTime + "ms ease";
       setIndex(index + 1);
     }
   };
@@ -59,12 +63,6 @@ const SlideShow = () => {
       clearTimeout(timeoutRef.current);
     }
   };
-
-  // First time the page is rendered, initial Transition
-  useEffect(() => {
-    document.getElementsByClassName("image_display")[0].style.transition =
-      "all " + animeTime + "ms ease";
-  }, []);
 
   useEffect(() => {
     resetTimeout();
@@ -105,7 +103,7 @@ const SlideShow = () => {
                 : ""
             }`}
             onClick={() => {
-              setIndex(idx);
+              setIndex(idx + 1);
             }}
           ></div>
         ))}
