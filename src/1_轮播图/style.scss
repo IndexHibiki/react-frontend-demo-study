@@ -9,14 +9,8 @@
   width: 40vw;
   overflow: hidden;
   position: relative;
-  .image_dynamic {
-    transition: ease 1s;
-  }
 
-  .image_idle {
-  }
-
-  #image_display {
+  .image_display {
     width: 40vw;
     height: 40vw;
     white-space: nowrap;
@@ -77,11 +71,11 @@
     }
   }
 
-  .to_former {
+  .to_left {
     transform: rotate3d(0, 1, 0, 180deg);
   }
 
-  .to_latter {
+  .to_right {
     left: 36vw;
   }
 }

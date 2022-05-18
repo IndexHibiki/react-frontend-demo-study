@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import image1 from "./image1.png";
 import image2 from "./image2.png";
@@ -7,12 +7,52 @@ import { ReactComponent as Arrow } from "./arrow.svg";
 import "./style.css";
 
 const SlideShow = () => {
-  const [index, setIndex] = useState(0);
-  const timeoutRef = React.useRef(null);
   // these elements can be parameters from which use this Component
   // So you can customize your slide show
-  const images = [image1, image2, image3, image1];
+  const images = [image3, image1, image2, image3, image1];
   const delay = 2000;
+  const animeTime = 200;
+
+  const [index, setIndex] = useState(1);
+  const timeoutRef = React.useRef(null);
+
+  const toLeft = () => {
+    if (index === 1) {
+      setIndex(0);
+
+      setTimeout(() => {
+        document.getElementsByClassName("image_display")[0].style.transition =
+          "";
+        setIndex(images.length - 2);
+      }, animeTime);
+
+      setTimeout(() => {
+        document.getElementsByClassName("image_display")[0].style.transition =
+          "all " + animeTime + "ms ease";
+      }, delay);
+    } else {
+      setIndex(index - 1);
+    }
+  };
+
+  const toRight = () => {
+    if (index === images.length - 2) {
+      setIndex(images.length - 1);
+
+      setTimeout(() => {
+        document.getElementsByClassName("image_display")[0].style.transition =
+          "";
+        setIndex(1);
+      }, animeTime);
+
+      setTimeout(() => {
+        document.getElementsByClassName("image_display")[0].style.transition =
+          "all " + animeTime + "ms ease";
+      }, delay);
+    } else {
+      setIndex(index + 1);
+    }
+  };
 
   const resetTimeout = () => {
     if (timeoutRef.current) {
@@ -20,27 +60,16 @@ const SlideShow = () => {
     }
   };
 
-  React.useEffect(() => {
+  // First time the page is rendered, initial Transition
+  useEffect(() => {
+    document.getElementsByClassName("image_display")[0].style.transition =
+      "all " + animeTime + "ms ease";
+  }, []);
+
+  useEffect(() => {
     resetTimeout();
-    // My loop logic is that add the first image to the last of image arrays, preventing unexcepted jump from the last one to the first one
-    // So need change delay to correctly display the animation
-    // Just remember assert Transition Time less than delay
-    var ddelay = index === images.length - 1 || index === 0 ? delay / 2 : delay;
-    timeoutRef.current = setTimeout(
-      () =>
-        setIndex((prevIndex) => {
-          console.log(234);
-          if (prevIndex === images.length - 1) {
-            document.getElementById("image_display").className = "image_idle";
-            return 0;
-          } else {
-            document.getElementById("image_display").className =
-              "image_dynamic";
-            return prevIndex + 1;
-          }
-        }),
-      ddelay
-    );
+
+    timeoutRef.current = setTimeout(() => toRight(), delay);
 
     return () => {
       resetTimeout();
@@ -49,28 +78,16 @@ const SlideShow = () => {
 
   return (
     <div className="slide_show">
-      <div
-        className="control to_former"
-        onClick={() => {
-          setIndex(
-            index === 0 || index === 1 ? images.length + index - 2 : index - 1
-          );
-        }}
-      >
+      {/* To Left and To Right Button */}
+      <div className="control to_left" onClick={() => toLeft()}>
         <Arrow className="icon" />
       </div>
-      <div
-        className="control to_latter"
-        onClick={() => {
-          setIndex(index === images.length - 1 ? 0 : index + 1);
-        }}
-      >
+      <div className="control to_right" onClick={() => toRight()}>
         <Arrow className="icon" />
       </div>
       {/* Images Area */}
       <div
-        className="image_dynamic"
-        id="image_display"
+        className="image_display"
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
         {images.map((item) => (
@@ -79,10 +96,13 @@ const SlideShow = () => {
       </div>
       {/* Dot Area */}
       <div className="dot_display">
-        {images.slice(0, images.length - 1).map((item, idx) => (
+        {images.slice(1, images.length - 1).map((item, idx) => (
           <div
             className={`${
-              (index === images.length - 1 ? 0 : index) === idx ? "active" : ""
+              (index === images.length - 1 || index === 0 ? 0 : index) ===
+              idx + 1
+                ? "active"
+                : ""
             }`}
             onClick={() => {
               setIndex(idx);
