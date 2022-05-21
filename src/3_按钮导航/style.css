@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Buffalo";
+  src: url("BuffaloInline2Grunge.ttf");
+}
+
+:root {
+  --nav-width: 80%;
+  --link-width: 48%;
+  --link-height: 4.5vh;
+  --link-background-color: rgb(239, 239, 239);
+  --link-active-background-color: rgb(233, 233, 233);
+  --link-border-color: rgb(212, 212, 212);
+  --link-left-offset: 20%;
+  --link-font-size: 1.75vw;
+  --link-active-font-size: 2vw;
+  --anime-time: 500ms;
+}
+
+.button_navigation {
+  width: var(--nav-width);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.button_navigation a {
+  width: var(--link-width);
+  height: var(--link-height);
+  margin: calc((50% - var(--link-width)) / 2);
+  background-color: var(--link-background-color);
+  border: 1px solid var(--link-border-color);
+  border-radius: 0.4vw;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 1vh 3.6vh 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 0.2vh;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 1vh 3.6vh 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 0.2vh;
+  text-decoration: none;
+  -webkit-transition: all var(--anime-time) ease;
+  transition: all var(--anime-time) ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button_navigation a h2 {
+  -webkit-transition: all var(--anime-time) ease;
+  transition: all var(--anime-time) ease;
+  font-size: var(--link-font-size);
+  font-family: "Buffalo";
+  padding-left: var(--link-left-offset);
+}
+
+.button_navigation a:hover {
+  background-color: var(--link-active-background-color);
+  -webkit-transform: scale(1.04, 1.2);
+          transform: scale(1.04, 1.2);
+}
+
+.button_navigation a:hover h2 {
+  font-size: var(--link-active-font-size);
+}
+/*# sourceMappingURL=style.css.map */

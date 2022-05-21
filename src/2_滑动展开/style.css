@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --unfold-anime-time: 850ms;
+  --control-anime-time: 500ms;
+  --head-height: 6;
+  --detail-normal-height: 10;
+  --detail-unfolded-height: 30;
+  --border-radius: 0.45;
+  --detail-background-color: rgb(242, 242, 242);
+  --outer-border: rgb(230, 230, 230);
+}
+
+.slide_unfold_down {
+  width: 60vw;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.slide_unfold_down .head {
+  height: calc((var(--head-height) + var(--detail-normal-height)) * 1vh);
+  padding: 0.2vw 0.5vw;
+  border: 2px solid var(--outer-border);
+  border-top-left-radius: calc(var(--border-radius) * 1vw);
+  border-top-right-radius: calc(var(--border-radius) * 1vw);
+}
+
+.slide_unfold_down .detail {
+  position: absolute;
+  top: calc(var(--head-height) * 1vh);
+  background-color: var(--detail-background-color);
+  padding: 0.3vw 1vw;
+  border: 2px solid var(--outer-border);
+  -webkit-transition: all var(--unfold-anime-time) ease;
+  transition: all var(--unfold-anime-time) ease;
+}
+
+.slide_unfold_down .detail_idle {
+  height: calc(var(--detail-normal-height) * 1vh);
+  overflow: hidden;
+}
+
+.slide_unfold_down .detail_active {
+  height: calc(var(--detail-unfolded-height) * 1vh);
+  overflow-y: scroll;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.slide_unfold_down .detail_active::-webkit-scrollbar {
+  width: 5px;
+}
+
+.slide_unfold_down .detail_active::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.slide_unfold_down .detail_active::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.slide_unfold_down .detail_active::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.slide_unfold_down .control {
+  height: 3.5vh;
+  width: 100%;
+  background-color: #ececec;
+  border: 2px solid var(--outer-border);
+  border-bottom-left-radius: calc(var(--border-radius) * 1vw);
+  border-bottom-right-radius: calc(var(--border-radius) * 1vw);
+  -webkit-transition: all var(--unfold-anime-time) ease;
+  transition: all var(--unfold-anime-time) ease;
+  position: absolute;
+}
+
+.slide_unfold_down .control .control_icon {
+  width: 2.2vw;
+  height: 2.7vh;
+  float: right;
+  -webkit-transition: all var(--control-anime-time) ease;
+  transition: all var(--control-anime-time) ease;
+}
+
+.slide_unfold_down .control:hover {
+  background-color: gainsboro;
+}
+
+.slide_unfold_down .control:hover .control_icon {
+  -webkit-transform: scale(1.2, 1.4);
+          transform: scale(1.2, 1.4);
+}
+
+.slide_unfold_down .control_idle {
+  top: calc((var(--head-height) + var(--detail-normal-height)) * 1vh);
+}
+
+.slide_unfold_down .control_idle .control_icon {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.slide_unfold_down .control_active {
+  top: calc((var(--head-height) + var(--detail-unfolded-height)) * 1vh);
+}
+
+.slide_unfold_down .control_active:hover .control_icon {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+/*# sourceMappingURL=style.css.map */

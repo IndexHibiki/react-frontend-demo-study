@@ -1,0 +1,119 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --unfold-anime-time: 850ms;
+  --control-anime-time: 500ms;
+
+  --head-height: 6; // units vh
+  --detail-normal-height: 10; // units vh
+  --detail-unfolded-height: 30; // units vh
+  --border-radius: 0.45; // units vw
+
+  --detail-background-color: rgb(242, 242, 242);
+
+  --outer-border: rgb(230, 230, 230);
+}
+
+.slide_unfold_down {
+  width: 60vw;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .head {
+    height: calc((var(--head-height) + var(--detail-normal-height)) * 1vh);
+    padding: 0.2vw 0.5vw;
+    border: 2px solid var(--outer-border);
+    border-top-left-radius: calc(var(--border-radius) * 1vw);
+    border-top-right-radius: calc(var(--border-radius) * 1vw);
+  }
+
+  .detail {
+    position: absolute;
+    top: calc(var(--head-height) * 1vh);
+    background-color: var(--detail-background-color);
+    padding: 0.3vw 1vw;
+    border: 2px solid var(--outer-border);
+    transition: all var(--unfold-anime-time) ease;
+  }
+
+  .detail_idle {
+    height: calc(var(--detail-normal-height) * 1vh);
+    overflow: hidden;
+  }
+
+  .detail_active {
+    height: calc(var(--detail-unfolded-height) * 1vh);
+    overflow-y: scroll;
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
+  .control {
+    height: 3.5vh;
+    width: 100%;
+    background-color: rgb(236, 236, 236);
+    border: 2px solid var(--outer-border);
+    border-bottom-left-radius: calc(var(--border-radius) * 1vw);
+    border-bottom-right-radius: calc(var(--border-radius) * 1vw);
+    transition: all var(--unfold-anime-time) ease;
+
+    position: absolute;
+
+    .control_icon {
+      width: 2.2vw;
+      height: 2.7vh;
+      float: right;
+      transition: all var(--control-anime-time) ease;
+    }
+
+    &:hover {
+      background-color: rgb(220, 220, 220);
+
+      .control_icon {
+        transform: scale(1.2, 1.4);
+      }
+    }
+  }
+
+  .control_idle {
+    top: calc((var(--head-height) + var(--detail-normal-height)) * 1vh);
+
+    .control_icon {
+      transform: rotateX(180deg);
+    }
+  }
+
+  .control_active {
+    top: calc((var(--head-height) + var(--detail-unfolded-height)) * 1vh);
+
+    &:hover {
+      .control_icon {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
