@@ -26,6 +26,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/slide_show" element={<SlideShow />} />
+
         <Route
           path="/slide_unfold"
           element={
@@ -53,6 +54,7 @@ function App() {
             </div>
           }
         />
+
         <Route path="/" element={<ButtonNavgation routes={routes} />} />
       </Routes>
     </div>

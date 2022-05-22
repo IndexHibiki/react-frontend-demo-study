@@ -10,6 +10,9 @@ const ButtonNavgation = (prop) => {
     <div className="button_navigation">
       <Link to={routes.slide_show.path}>
         <h2>{routes.slide_show.name}</h2>
+        <div className="brief_show">
+          <img src="" alt="" />
+        </div>
       </Link>
       <Link to={routes.slide_unfold.path}>
         <h2>{routes.slide_unfold.name}</h2>
