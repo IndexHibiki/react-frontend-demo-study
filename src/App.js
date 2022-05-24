@@ -3,24 +3,31 @@ import { Routes, Route } from "react-router-dom";
 import SlideShow from "./1_轮播图/SlideShow";
 import SlideUnfoldDown from "./2_滑动展开/SlideUnfoldDown";
 import ButtonNavgation from "./3_按钮导航/ButtonNavgation";
+import TurnTable from "./4_抽奖转盘/TurnTable";
 
 import "./style.css";
 
 function App() {
-  const routes = {
-    homepage: {
+  const routes = [
+    {
+      path: "/slide_show",
+      name: "Slide Show",
+      show: require("../show/1_轮播图_show.gif"),
+    },
+    {
+      path: "/slide_unfold",
+      name: "Slide Unfold",
+      show: require("../show/2_滑动展开_show.gif"),
+    },
+    {
       path: "/",
       name: "here",
     },
-    slide_show: {
-      path: "/slide_show",
-      name: "Slide Show",
+    {
+      path: "/turn_table",
+      name: "Turn Table",
     },
-    slide_unfold: {
-      path: "/slide_unfold",
-      name: "Slide Unfold",
-    },
-  };
+  ];
 
   return (
     <div className="App">
@@ -56,6 +63,8 @@ function App() {
         />
 
         <Route path="/" element={<ButtonNavgation routes={routes} />} />
+
+        <Route path="/turn_table" element={<TurnTable routes={routes} />} />
       </Routes>
     </div>
   );

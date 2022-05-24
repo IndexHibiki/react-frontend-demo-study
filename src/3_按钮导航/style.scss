@@ -13,8 +13,14 @@
 :root {
   --nav-width: 80%;
 
-  --link-width: 48%;
-  --link-height: 4.5vh;
+  --block-width: 50%;
+
+  // This also means the width of buttons we focus on
+  // And if you change this,
+  // remenber change .button_navigation -> .button_nav_block -> a -> margin,
+  // which use to control the margin between buttons
+  --link-width: 96%;
+  --link-height: 5.5vh;
 
   --link-background-color: rgb(239, 239, 239);
   --link-active-background-color: rgb(233, 233, 233);
@@ -33,37 +39,51 @@
   flex-direction: row;
   flex-wrap: wrap;
 
-  a {
-    width: var(--link-width);
-    height: var(--link-height);
-    margin: calc((50% - var(--link-width)) / 2);
+  .button_nav_block {
+    width: var(--block-width);
 
-    background-color: var(--link-background-color);
-    border: 1px solid var(--link-border-color);
-    border-radius: 0.4vw;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 1vh 3.6vh 0px,
-      rgba(0, 0, 0, 0.06) 0px 0px 0px 0.2vh;
+    a {
+      width: var(--link-width);
+      height: var(--link-height);
+      margin: calc((100% - var(--link-width)) / 2);
 
-    text-decoration: none;
+      background-color: var(--link-background-color);
+      border: 1px solid var(--link-border-color);
+      border-radius: 0.4vw;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 1vh 3.6vh 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 0.2vh;
 
-    transition: all var(--anime-time) ease;
-    display: flex;
-    align-items: center;
+      text-decoration: none;
 
-    h2 {
       transition: all var(--anime-time) ease;
-      font-size: var(--link-font-size);
-      font-family: "Buffalo";
-      padding-left: var(--link-left-offset);
-    }
-
-    &:hover {
-      background-color: var(--link-active-background-color);
-      transform: scale(1.04, 1.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
       h2 {
-        font-size: var(--link-active-font-size);
+        transition: all var(--anime-time) ease;
+        font-size: var(--link-font-size);
+        font-family: "Buffalo";
+        padding-left: var(--link-left-offset);
       }
+
+      &:hover {
+        background-color: var(--link-active-background-color);
+        transform: scale(1.04, 1.2);
+
+        h2 {
+          font-size: var(--link-active-font-size);
+        }
+      }
+    }
+  }
+
+  .brief_show {
+    position: absolute;
+    display: none;
+
+    img {
+      width: 40vw;
     }
   }
 }

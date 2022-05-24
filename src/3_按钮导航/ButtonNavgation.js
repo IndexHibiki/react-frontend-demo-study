@@ -6,20 +6,20 @@ import "./style.css";
 const ButtonNavgation = (prop) => {
   const { routes } = prop;
 
+  const buttons_one_line = 2;
+
   return (
     <div className="button_navigation">
-      <Link to={routes.slide_show.path}>
-        <h2>{routes.slide_show.name}</h2>
-        <div className="brief_show">
-          <img src="" alt="" />
+      {routes.map((item) => (
+        <div className="button_nav_block">
+          <Link to={item.path}>
+            <h2>{item.name}</h2>
+          </Link>
+          <div className="brief_show">
+            <img src={item.show} alt="" />
+          </div>
         </div>
-      </Link>
-      <Link to={routes.slide_unfold.path}>
-        <h2>{routes.slide_unfold.name}</h2>
-      </Link>
-      <Link to={routes.homepage.path}>
-        <h2>{routes.homepage.name}</h2>
-      </Link>
+      ))}
     </div>
   );
 };

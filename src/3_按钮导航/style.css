@@ -12,8 +12,9 @@
 
 :root {
   --nav-width: 80%;
-  --link-width: 48%;
-  --link-height: 4.5vh;
+  --block-width: 50%;
+  --link-width: 96%;
+  --link-height: 5.5vh;
   --link-background-color: rgb(239, 239, 239);
   --link-active-background-color: rgb(233, 233, 233);
   --link-border-color: rgb(212, 212, 212);
@@ -36,10 +37,14 @@
       flex-wrap: wrap;
 }
 
-.button_navigation a {
+.button_navigation .button_nav_block {
+  width: var(--block-width);
+}
+
+.button_navigation .button_nav_block a {
   width: var(--link-width);
   height: var(--link-height);
-  margin: calc((50% - var(--link-width)) / 2);
+  margin: calc((100% - var(--link-width)) / 2);
   background-color: var(--link-background-color);
   border: 1px solid var(--link-border-color);
   border-radius: 0.4vw;
@@ -51,12 +56,16 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.button_navigation a h2 {
+.button_navigation .button_nav_block a h2 {
   -webkit-transition: all var(--anime-time) ease;
   transition: all var(--anime-time) ease;
   font-size: var(--link-font-size);
@@ -64,13 +73,22 @@
   padding-left: var(--link-left-offset);
 }
 
-.button_navigation a:hover {
+.button_navigation .button_nav_block a:hover {
   background-color: var(--link-active-background-color);
   -webkit-transform: scale(1.04, 1.2);
           transform: scale(1.04, 1.2);
 }
 
-.button_navigation a:hover h2 {
+.button_navigation .button_nav_block a:hover h2 {
   font-size: var(--link-active-font-size);
+}
+
+.button_navigation .brief_show {
+  position: absolute;
+  display: none;
+}
+
+.button_navigation .brief_show img {
+  width: 40vw;
 }
 /*# sourceMappingURL=style.css.map */

@@ -56,8 +56,27 @@ const SlideUnfoldDown = () => {
   }, [isUnfold]);
 
   return (
-    <div className="slide_unfold_down">
-      <div className="head">
+    <div
+      className="slide_unfold_down"
+      // Why onMouseLeave is here, but not in the Head
+      // Because this is for the Scenario after the Mouse touches the Head
+      // But then Move to the Detail, this block when Fold Automatically
+      // We want this block will Fold when ths Mouse literally leave the block,
+      // not just the Head
+      // Maybe you want the detail be folded when the Mouse leave this block and Click
+      // I dont know whether it can implement just in here
+      // To satisfy this, I think you should setIsUnfold in the Parent Component
+      onMouseLeave={() => {
+        setIsUnfold(false);
+      }}
+    >
+      <div
+        className="head"
+        // Unfold when the Mouse touch the Head
+        onMouseOver={() => {
+          setIsUnfold(true);
+        }}
+      >
         <h1>{content.head}</h1>
       </div>
       <div className="detail">
