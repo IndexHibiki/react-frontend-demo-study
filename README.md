@@ -38,7 +38,7 @@
 - [ ] 向左展开
 - [ ] 向右展开
 
-
+![images](https://github.com/IndexHibiki/react-frontend-demo-study/blob/master/show/2_%E6%BB%91%E5%8A%A8%E5%B1%95%E5%BC%80_show.gif?raw=true)
 
 利用在html中定义两种className  active和idle作为激活和未激活的两个状态，然后在css中分别就这两种状态进行调整即可
 
