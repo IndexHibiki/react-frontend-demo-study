@@ -63,5 +63,34 @@
 - [x] 锐角和钝角的扇形实现
 - [ ] 优角（凸角，即大于180度的）的扇形实现     （即优角无法正常显示）
 - [x] 无需每次重置再进行抽奖
-- [ ] 背景颜色自动设置
+- [x] 背景颜色自动设置
+- [ ] 能自动设置背景颜色，但每次抽奖时颜色都会再次生成一次
 - [ ] 自动分割扇形，以获取更好的视觉效果
+
+![images](https://github.com/IndexHibiki/react-frontend-demo-study/blob/master/show/4_%E6%8A%BD%E5%A5%96%E8%BD%AC%E7%9B%98.gif?raw=true)
+
+扇形区域用的两个skewY实现
+
+
+
+
+
+
+
+## 5_加入购物车
+
+- [x] 单张图片的加入购物车动画
+- [x] 购物车加入物品后的交互动画
+- [x] 固定动画时间的模式
+- [x] 固定X轴速度的模式
+
+![images](https://github.com/IndexHibiki/react-frontend-demo-study/blob/master/show/5_%E5%8A%A0%E5%85%A5%E8%B4%AD%E7%89%A9%E8%BD%A6.gif?raw=true)
+
+主要就是获取组件的位置信息 getBoundingClientRect() 和设置动画requestAnimationFrame()
+
+
+
+
+
+## 6_滚动图集
+
