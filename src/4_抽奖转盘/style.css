@@ -15,8 +15,6 @@
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
-  -webkit-transition: all 4s ease-out;
-  transition: all 4s ease-out;
 }
 
 .turn_table li {
@@ -37,53 +35,5 @@
   height: 200%;
   text-align: center;
   padding-top: 20px;
-}
-
-.turn_table li:first-child .text {
-  background: green;
-}
-
-.turn_table li:nth-child(2) .text {
-  background: tomato;
-}
-
-.turn_table li:nth-child(3) .text {
-  background: aqua;
-}
-
-.turn_table li:nth-child(4) .text {
-  background: yellow;
-}
-
-.turn_table li:nth-child(5) .text {
-  background: orange;
-}
-
-.turn_table li:nth-child(6) .text {
-  background: purple;
-}
-
-.turn_table li:nth-child(7) .text {
-  background: cyan;
-}
-
-.turn_table li:nth-child(8) .text {
-  background: brown;
-}
-
-.turn_table li:nth-child(9) .text {
-  background: gray;
-}
-
-.turn_table li:nth-child(10) .text {
-  background: pink;
-}
-
-.turn_table li:nth-child(11) .text {
-  background: maroon;
-}
-
-.turn_table li:nth-child(12) .text {
-  background: gold;
 }
 /*# sourceMappingURL=style.css.map */

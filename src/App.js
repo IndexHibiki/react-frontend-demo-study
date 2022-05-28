@@ -4,6 +4,8 @@ import SlideShow from "./1_轮播图/SlideShow";
 import SlideUnfoldDown from "./2_滑动展开/SlideUnfoldDown";
 import ButtonNavgation from "./3_按钮导航/ButtonNavgation";
 import TurnTable from "./4_抽奖转盘/TurnTable";
+import AddToCart from "./5_加入购物车/AddToCart";
+import RowScrollGallery from "./6_滚动图集/RowScrollGallery";
 
 import "./style.css";
 
@@ -26,6 +28,16 @@ function App() {
     {
       path: "/turn_table",
       name: "Turn Table",
+      show: require("../show/4_抽奖转盘.gif"),
+    },
+    {
+      path: "/add_to_cart",
+      name: "Add To Cart",
+      show: require("../show/5_加入购物车.gif"),
+    },
+    {
+      path: "/row_scroll_gallery",
+      name: "Row Scroll Gallery",
     },
   ];
 
@@ -64,7 +76,11 @@ function App() {
 
         <Route path="/" element={<ButtonNavgation routes={routes} />} />
 
-        <Route path="/turn_table" element={<TurnTable routes={routes} />} />
+        <Route path="/turn_table" element={<TurnTable />} />
+
+        <Route path="/add_to_cart" element={<AddToCart />} />
+
+        <Route path="/row_scroll_gallery" element={<RowScrollGallery />} />
       </Routes>
     </div>
   );

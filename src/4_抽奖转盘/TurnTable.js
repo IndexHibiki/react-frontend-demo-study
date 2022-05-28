@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import "./style.css";
 
 const TurnTable = () => {
+  // You can pass the Datas as a parameter
+  // name: means the Text showed on each fan shape
+  // size: how many degrees this Text will get
   const datas = [
     {
       name: "AAA",
@@ -38,6 +41,19 @@ const TurnTable = () => {
     },
   ];
 
+  const backgroundColors = [];
+  for (let i = 0; i < datas.length; i++) {
+    backgroundColors.push(
+      "rgb(" +
+        Math.random() * 255 +
+        ", " +
+        (50 + Math.random() * 205) +
+        ", " +
+        Math.random() * 255 +
+        ")"
+    );
+  }
+
   var sizeSums = [];
   datas.map((item) => {
     if (sizeSums.length === 0) {
@@ -57,29 +73,40 @@ const TurnTable = () => {
   });
 
   const [rotateDegree, setRotateDegree] = useState(0);
-  const [rotateTime, setRotateTime] = useState(3000);
+  // const [rotateTime, setRotateTime] = useState(3000);
 
   const onTurnHandler = () => {
+    const turnTable = document.getElementsByClassName("circle")[0];
     const rotateDegree = Math.floor(Math.random() * 1080) + 1080;
 
-    setRotateTime(3000);
-    setRotateDegree(rotateDegree);
+    // // setRotateTime(0);
+    // turnTable.style.transition = "all " + 0 + "ms ease-out";
+    // setRotateDegree(0);
+
+    setTimeout(() => {
+      // setRotateTime(3000);
+      turnTable.style.transition = "all " + 3000 + "ms ease-out";
+      setRotateDegree(rotateDegree);
+    }, 1);
   };
 
   const onResetHandler = () => {
-    setRotateTime(0);
+    const turnTable = document.getElementsByClassName("circle")[0];
+    turnTable.style.transition = "all " + 0 + "ms ease-out";
     setRotateDegree(0);
+    // setRotateTime(0);
   };
 
   return (
     <div className="turn_table">
-      <button onClick={onTurnHandler}>Gachya</button>
+      <button onClick={onTurnHandler}>Gacha</button>
       <button onClick={onResetHandler}>Reset</button>
+
       <ul
         className="circle"
         style={{
           transform: `rotate(${rotateDegree}deg)`,
-          transition: `all ${rotateTime}ms ease-out`,
+          // transition: `all ${rotateTime}ms ease-out`,
         }}
       >
         {datas.map((item, idx) => (
@@ -97,6 +124,7 @@ const TurnTable = () => {
                 transform: `skewY(${skewDegrees[idx]}deg) rotate(${
                   Math.abs(skewDegrees[idx] - 90) / 2
                 }deg)`,
+                backgroundColor: backgroundColors[idx],
               }}
             >
               {item.name}

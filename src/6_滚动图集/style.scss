@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.row_scroll_gallery {
+  width: 100%;
+
+  .gallery {
+    overflow: hidden;
+    position: fixed;
+    top: -75vh;
+
+    // transform: skewY(-10deg);
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      align-items: center;
+      flex-wrap: nowrap;
+      overflow: hidden;
+
+      // transform: skewX(10deg);
+
+      .image {
+        height: 210px;
+        margin: 0.5vw;
+      }
+    }
+  }
+}

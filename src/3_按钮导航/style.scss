@@ -80,7 +80,8 @@
 
   .brief_show {
     position: absolute;
-    display: none;
+    z-index: 10;
+    // display: none;
 
     img {
       width: 40vw;

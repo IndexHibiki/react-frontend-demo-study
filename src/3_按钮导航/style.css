@@ -85,7 +85,7 @@
 
 .button_navigation .brief_show {
   position: absolute;
-  display: none;
+  z-index: 10;
 }
 
 .button_navigation .brief_show img {

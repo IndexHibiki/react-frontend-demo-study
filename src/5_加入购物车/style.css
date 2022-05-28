@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.add_to_cart {
+  width: 100%;
+}
+
+.add_to_cart .commodities {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.add_to_cart .commodities .product {
+  width: 35vw;
+  height: 40vw;
+  border: 1px solid gray;
+  margin: 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.add_to_cart .commodities .product img {
+  width: 30vw;
+  height: 30vw;
+}
+
+.add_to_cart .cart {
+  width: 7vw;
+  height: 7vw;
+  position: fixed;
+  right: 3vw;
+  top: 80vh;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 5;
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
+}
+
+.add_to_cart .cart svg {
+  width: 5vw;
+  height: 5vw;
+  position: relative;
+  left: 0.5vw;
+  top: 0.7vw;
+}
+
+.add_to_cart .adding {
+  border: 1px solid black;
+}
+/*# sourceMappingURL=style.css.map */
