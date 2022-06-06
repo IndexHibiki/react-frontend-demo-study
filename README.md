@@ -94,7 +94,11 @@
 
 ## 6_滚动图集
 
+- [x] 图片正常滚动
+- [x] 任何尺寸的图片均可显示（固定height，并利用css的自适应）
+- [ ] 循环
 
+![images](https://github.com/IndexHibiki/react-frontend-demo-study/blob/master/show/6_%E6%BB%9A%E5%8A%A8%E5%9B%BE%E9%9B%86.gif?raw=true)
 
 
 
@@ -102,7 +106,9 @@
 
 ## 7_扩大式跳转
 
-
+- [x] 显示一个逐渐变大的背景以遮盖当前页面
+- [ ] 遮盖完毕后进行跳转
+- [ ] 尝试在遮盖过程中获取目标页面信息
 
 
 
@@ -110,7 +116,10 @@
 
 ## 8_主页介绍部分
 
+- [x] 简单展示一个homepage页面
+- [x] 尝试对一个个人比较喜欢的颜色进行色彩搭配设计
 
+![images](https://github.com/IndexHibiki/react-frontend-demo-study/blob/master/show/8_%E4%B8%BB%E9%A1%B5%E4%BB%8B%E7%BB%8D%E9%83%A8%E5%88%86.png?raw=true)
 
 
 
@@ -118,9 +127,12 @@
 
 ## 9_对话框
 
+- [x] 点击按钮后显示一个对话框
+- [x] 点击cancel关闭对话框
+- [x] 点击对话框以外的位置关闭对话框
+- [ ] 对OK时间进行处理
 
-
-
+![images](https://github.com/IndexHibiki/react-frontend-demo-study/blob/master/show/9_%E5%AF%B9%E8%AF%9D%E6%A1%86.gif?raw=true)
 
 
 
@@ -128,4 +140,16 @@
 
 ## 10_命令行风格主页
 
-https://github.com/TBXark/tbxark.github.io
+由TBXark大佬的Mac系统的命令行来的灵感https://github.com/TBXark/tbxark.github.io
+
+做了一个仿照Windows命令行的homepage
+
+- [x] Window命令行风格
+- [x] 点击command命令来输入指令
+- [x] 点击link进行跳转
+- [ ] 用户可以自行输入指令
+
+![images](https://github.com/IndexHibiki/react-frontend-demo-study/blob/master/show/10_%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%A3%8E%E6%A0%BC%E4%B8%BB%E9%A1%B5.gif?raw=true)
+
+
+
