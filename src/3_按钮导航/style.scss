@@ -27,7 +27,7 @@
   --link-border-color: rgb(212, 212, 212);
 
   --link-left-offset: 20%;
-  --link-font-size: 1.75vw;
+  --link-font-size: 1.85vw;
   --link-active-font-size: 2vw;
 
   --anime-time: 500ms;
@@ -65,6 +65,7 @@
         font-size: var(--link-font-size);
         font-family: "Buffalo";
         padding-left: var(--link-left-offset);
+        letter-spacing: 0.08vw;
       }
 
       &:hover {

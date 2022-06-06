@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.dialog_box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+
+  display: flex;
+  flex-direction: colomn;
+  justify-content: center;
+  align-items: center;
+
+  .dialog_block {
+    width: 40%;
+    min-width: 350px;
+    min-height: 40%;
+    background-color: white;
+    border-radius: 20px;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .dialog_content {
+      flex-grow: 4;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        padding: 0.3vw 0.3vw 0.2vw 1vw;
+        font-size: 2.5vw;
+        text-indent: 2vw;
+      }
+    }
+
+    .dialog_control {
+      flex-grow: 1;
+      width: 100%;
+      padding: 0.3vw 0;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+
+      button {
+        padding: 0.2vw 0.5vw;
+        font-size: 2vw;
+        border-radius: 5px;
+        border: 2px solid rgb(212, 212, 212);
+        background-color: rgb(227, 227, 227);
+
+        &:hover {
+          border: 2px solid rgb(203, 202, 202);
+          background-color: rgb(220, 220, 220);
+        }
+      }
+    }
+  }
+}

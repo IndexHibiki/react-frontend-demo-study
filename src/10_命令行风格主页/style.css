@@ -1,0 +1,111 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.command_style_homepage {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.command_style_homepage .command_block {
+  width: 50%;
+  border: 2px solid gray;
+}
+
+.command_style_homepage .command_block .head {
+  width: 100%;
+  padding: 0.2vw 0.3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5vw;
+  background-color: #e7e7e7;
+  color: black;
+}
+
+.command_style_homepage .command_block .head svg {
+  width: 1.2vw;
+  height: 1.2vw;
+}
+
+.command_style_homepage .command_block .command {
+  height: 70vh;
+  padding: 0.25vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: scroll;
+}
+
+.command_style_homepage .command_block .command .nav {
+  margin: 0.5vw 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.command_style_homepage .command_block .command .nav .nav_item {
+  font-size: 1.5vw;
+  color: #7cfdff;
+  margin: 0 0.75vw;
+}
+
+.command_style_homepage .command_block .command .nav .nav_item:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.command_style_homepage .command_block .command .command_line {
+  color: white;
+  font-size: 1.5vw;
+  margin-bottom: 0.4vw;
+}
+
+.command_style_homepage .command_block .command .command_line a {
+  color: #7cfdff;
+  text-decoration: none;
+}
+
+.command_style_homepage .command_block .command .command_line a:hover {
+  text-decoration: underline;
+}
+
+.command_style_homepage .command_block .command .blank {
+  height: 3.2vh;
+}
+/*# sourceMappingURL=style.css.map */

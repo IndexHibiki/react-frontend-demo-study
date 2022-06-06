@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.homepage_intro {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(110, 45, 216);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .intro {
+    width: 70vw;
+    color: white;
+
+    h1 {
+      text-align: center;
+      font-size: 9vw;
+    }
+
+    p {
+      text-align: left;
+      font-size: 3vw;
+    }
+  }
+
+  .control {
+    margin-top: 5vw;
+    background-color: rgb(255, 248, 54);
+    border-radius: 5px;
+
+    a {
+      text-decoration: none;
+
+      h2 {
+        padding: 0.3vw 1vw;
+        font-size: 3vw;
+        color: black;
+      }
+    }
+  }
+}
